@@ -346,7 +346,8 @@ function Balls () {
 	};
 	/* set a ball speed */
 	this.setBallSpeed = function(idx, x, y) {
-		balls[idx].body.SetLinearVelocity(new b2Vec2(x,y));
+		var magic = (Math.random() - 0.5) * 2;
+		balls[idx].body.SetLinearVelocity(new b2Vec2(x * magic, y * magic));
 		balls[idx].body.SetAwake(true);
 	};	
 	/* returns the cue ball position */
